@@ -1,0 +1,143 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>mx.com.goh</groupId>
+	<artifactId>emailsender</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<description>Library for email send.</description>
+	<packaging>jar</packaging>
+	<url>https://github.com/golivaresh/emailsender</url>
+	
+	<!-- Licenses -->
+	<licenses>
+		<license>
+			<name>GNU GENERAL PUBLIC LICENSE Version 3</name>
+			<url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
+		</license>
+	</licenses>
+	<!-- Software Configuration Management -->
+	<scm>
+		<url>https://github.com/golivaresh/emailsender</url>
+		<connection>https://github.com/golivaresh/emailsender.git</connection>
+		<developerConnection>https://github.com/golivaresh/emailsender/tree/developer</developerConnection>
+	</scm>
+
+	<!-- Developer -->
+	<developers>
+		<developer>
+			<name>Gustavo Olivares Hernández</name>
+			<email>golivaresh.dev@gmail.com</email>
+			<id>golivaresh</id>
+			<organization>golivaresh</organization>
+			<organizationUrl>...</organizationUrl>
+			<roles>
+				<role>Project Developer</role>
+			</roles>
+			<url>https://github.com/golivaresh</url>
+		</developer>
+	</developers>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+	</properties>
+
+	<dependencies>
+		<!-- Javax JavaEE API -->
+		<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Unit Test -->
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Loggin -->
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.9</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<!-- https://golivaresh.com/libreries/gcommons -->
+		<dependency>
+			<groupId>mx.com.goh</groupId>
+			<artifactId>gcommons</artifactId>
+			<version>1.0.1-SNAPSHOT</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+
+<!-- 	<repositories> -->
+<!-- 		<repository> -->
+<!-- 			<id>local-repository</id> -->
+			<!-- For Linux -->
+			<!-- <url>file:///${env.HOME}/.m2/repository_local</url> -->
+			<!-- For Windows -->
+<!-- 			<url>file:///${user.home}/.m2/repository_local</url> -->
+<!-- 		</repository> -->
+<!-- 	</repositories> -->
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

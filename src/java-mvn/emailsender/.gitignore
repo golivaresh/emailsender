@@ -1,0 +1,7 @@
+*.jar
+*.class
+*.lst
+
+/target/*
+/src/test/java/mx/com/golivaresh/email/core/test/*
+/target/
